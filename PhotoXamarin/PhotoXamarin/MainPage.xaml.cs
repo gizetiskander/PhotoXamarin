@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using PhotoXamarin.Models;
+using PhotoXamarin;
 using PhotoXamarin.db;
 using System.Diagnostics;
 using System.IO;
