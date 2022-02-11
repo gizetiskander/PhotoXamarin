@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhotoXamarin.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Frame Margin="0,0" BorderColor="Black">
+                    <Entry x:Name="Name" Placeholder="Введите название" TextColor="Black" Background="White" Margin="-15,-15" Keyboard="Text"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout>
+                <Button Margin="100,20,0,0"  x:Name="btnGallery" Clicked="" HorizontalOptions="Start" BorderColor="Black"  BorderWidth="1" BackgroundColor="LightBlue" TextColor="Black" Text="Галерея"/>
+                <Button Margin="0,-54,100,0"  x:Name="btnCam" HorizontalOptions="EndAndExpand" Clicked="" BorderColor="Black" BorderWidth="1" BackgroundColor="LightBlue" TextColor="Black" Text="Камера"/>
+                <Button Margin="0,4,160,0" x:Name="btnAdd" HorizontalOptions="EndAndExpand" Clicked="" BorderColor="Black" BorderWidth="1" BackgroundColor="LightBlue" TextColor="Black" Text="Добавить"/>
+        </StackLayout>
+     </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

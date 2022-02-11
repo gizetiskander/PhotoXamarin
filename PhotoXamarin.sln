@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoXamarin.Android", "PhotoXamarin\PhotoXamarin.Android\PhotoXamarin.Android.csproj", "{29B3559E-4DAF-48E9-BBAE-33B809850FF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoXamarin", "PhotoXamarin\PhotoXamarin\PhotoXamarin.csproj", "{5202F5C0-5FFE-4DF7-8172-7BF2A6D3FE61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29B3559E-4DAF-48E9-BBAE-33B809850FF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29B3559E-4DAF-48E9-BBAE-33B809850FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29B3559E-4DAF-48E9-BBAE-33B809850FF9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{29B3559E-4DAF-48E9-BBAE-33B809850FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29B3559E-4DAF-48E9-BBAE-33B809850FF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29B3559E-4DAF-48E9-BBAE-33B809850FF9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5202F5C0-5FFE-4DF7-8172-7BF2A6D3FE61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5202F5C0-5FFE-4DF7-8172-7BF2A6D3FE61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5202F5C0-5FFE-4DF7-8172-7BF2A6D3FE61}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5202F5C0-5FFE-4DF7-8172-7BF2A6D3FE61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5202F5C0-5FFE-4DF7-8172-7BF2A6D3FE61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5202F5C0-5FFE-4DF7-8172-7BF2A6D3FE61}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CA26BB7E-0506-4BEA-84FC-49ED6E6004BC}
+	EndGlobalSection
+EndGlobal
