@@ -68,6 +68,7 @@ namespace PhotoXamarin
         public void UpdateList()
         {
             ObjectList.ItemsSource = null;
+            /*Неизвестная ошибка*/
             //ObjectList.ItemsSource = App.DB.GetProjectPhotos();
         }
 
