@@ -10,10 +10,26 @@
                 </Frame>
             </StackLayout>
             <StackLayout>
-                <Button Margin="100,20,0,0"  x:Name="btnGallery" Clicked="" HorizontalOptions="Start" BorderColor="Black"  BorderWidth="1" BackgroundColor="LightBlue" TextColor="Black" Text="Галерея"/>
-                <Button Margin="0,-54,100,0"  x:Name="btnCam" HorizontalOptions="EndAndExpand" Clicked="" BorderColor="Black" BorderWidth="1" BackgroundColor="LightBlue" TextColor="Black" Text="Камера"/>
-                <Button Margin="0,4,160,0" x:Name="btnAdd" HorizontalOptions="EndAndExpand" Clicked="" BorderColor="Black" BorderWidth="1" BackgroundColor="LightBlue" TextColor="Black" Text="Добавить"/>
+                <Button Margin="50,20,0,0"  x:Name="btnGallery" Clicked="btnGallery_Clicked" HorizontalOptions="Start" BorderColor="Black"  BorderWidth="1" 
+                        BackgroundColor="LightBlue" TextColor="Black" Text="Галерея" CornerRadius="50" Padding="40,0"/>
+                <Button Margin="0,-54,50,0"  x:Name="btnCam" HorizontalOptions="EndAndExpand" Clicked="btnCam_Clicked" BorderColor="Black" BorderWidth="1" 
+                        BackgroundColor="LightBlue" TextColor="Black" Text="Камера" CornerRadius="100" Padding="40,0"/>
+                <Button Margin="0,20,0,0" x:Name="btnAdd" HorizontalOptions="Center" Clicked="btnAdd_Clicked" BorderColor="Black" BorderWidth="1" 
+                        BackgroundColor="LightBlue" TextColor="Black" Text="Добавить" Padding="150,0" CornerRadius="90"/>
+            </StackLayout>
+            <StackLayout>
+                <ListView x:Name="ObjectListview" Margin="0,0" ItemTapped="ObjectList_ItemTapped" RowHeight="50" SeparatorColor="Gray">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="{Binding Name}" TextColor="Black" FontSize="20"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </StackLayout>
-     </StackLayout>
     </ContentPage.Content>
 </ContentPage>
