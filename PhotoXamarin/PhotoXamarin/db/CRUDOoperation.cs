@@ -8,26 +8,26 @@ namespace PhotoXamarin.db
 {
     public class CRUDOperation
     {
-        SQLiteConnection db;
+        SQLiteConnection DB;
         public CRUDOperation(string database)
         {
-            db = new SQLiteConnection(database);
-            db.CreateTable<ProjectPhoto>();
+            DB = new SQLiteConnection(database);
+            DB.CreateTable<ProjectPhoto>();
         }
-        public IEnumerable<ProjectPhoto> GetProjects()
+        public IEnumerable<ProjectPhoto> GetProjectPhotos()
         {
-            return db.Table<ProjectPhoto>();
+            return DB.Table<ProjectPhoto>();
         }
         public int SaveItem(ProjectPhoto projectphoto)
         {
             if (projectphoto.Id != 0)
             {
-                db.Update(projectphoto);
+                DB.Update(projectphoto);
                 return projectphoto.Id;
             }
             else
             {
-                return db.Insert(projectphoto);
+                return DB.Insert(projectphoto);
             }
         }
 

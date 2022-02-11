@@ -14,7 +14,6 @@ namespace PhotoXamarin
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ObjectsPage : ContentPage
     {
-        readonly ProjectPhoto im;
         public ObjectsPage(ProjectPhoto im)
         {
             InitializeComponent();

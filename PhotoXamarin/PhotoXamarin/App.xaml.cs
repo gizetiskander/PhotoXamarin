@@ -9,16 +9,16 @@ namespace PhotoXamarin
     public partial class App : Application
     {
         public const string DB_NAME = "PhotoObj.db";
-        public static CRUDOperation db;
+        public static CRUDOperation DB;
         public static CRUDOperation Db
         {
             get
             {
-                if (db == null)
+                if (DB == null)
                 {
-                    db = new CRUDOperation(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DB_NAME));
+                    DB = new CRUDOperation(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DB_NAME));
                 }
-                return db;
+                return DB;
             }
         }
 

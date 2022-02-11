@@ -16,13 +16,34 @@ namespace PhotoXamarin
 {
     public partial class MainPage : ContentPage
     {
+        string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         public string impath;
         public MainPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
         }
-        async void TakePhotoAsync(object sender, EventArgs e)
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            UpdateList();
+        }
+
+        async void btnGallery_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                var photo = await MediaPicker.PickPhotoAsync();
+                impath = photo.FullPath;
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Сообщение об ошибке", ex.Message, "OK");
+            }
+        }
+
+        async void btnCam_Clicked(object sender, EventArgs e)
         {
             try
             {
@@ -44,51 +65,17 @@ namespace PhotoXamarin
             }
         }
 
-        async void GetPhotoAsync(object sender, EventArgs e)
-        {
-            try
-            {
-                var photo = await MediaPicker.PickPhotoAsync();
-                impath = photo.FullPath;
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert("Сообщение об ошибке", ex.Message, "OK");
-            }
-        }
-
-        private void ObjectList_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            Navigation.PushAsync(new ObjectsPage((ProjectPhoto)e.Item));
-        }
-
-        private void btnGallery_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCam_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
         public void UpdateList()
         {
-            ObjectListview.ItemsSource = null;
-            ObjectListview.ItemsSource = App.db.GetProjects();
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            UpdateList();
+            ObjectList.ItemsSource = null;
+            //ObjectList.ItemsSource = App.DB.GetProjectPhotos();
         }
 
         private void btnAdd_Clicked(object sender, EventArgs e)
         {
             try
             {
-                App.db.SaveItem(new ProjectPhoto(Name.Text, impath));
+                App.DB.SaveItem(new ProjectPhoto(Name.Text, impath));
                 DisplayAlert("", "Обьект успешно добавлен", "Ok");
                 UpdateList();
             }
@@ -96,6 +83,11 @@ namespace PhotoXamarin
             {
                 DisplayAlert("", "Не удалось добавить обьект", "Ok");
             }
+        }
+
+        private void ObjectList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            Navigation.PushAsync(new ObjectsPage((ProjectPhoto)e.Item));
         }
     }
 }

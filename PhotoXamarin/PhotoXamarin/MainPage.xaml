@@ -17,18 +17,20 @@
                 <Button Margin="0,20,0,0" x:Name="btnAdd" HorizontalOptions="Center" Clicked="btnAdd_Clicked" BorderColor="Black" BorderWidth="1" 
                         BackgroundColor="LightBlue" TextColor="Black" Text="Добавить" Padding="150,0" CornerRadius="90"/>
             </StackLayout>
-            <StackLayout>
-                <ListView x:Name="ObjectListview" Margin="0,0" ItemTapped="ObjectList_ItemTapped" RowHeight="50" SeparatorColor="Gray">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout>
-                                    <Label Text="{Binding Name}" TextColor="Black" FontSize="20"/>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+            <StackLayout Margin="10, 30">
+                <ScrollView>
+                    <ListView x:Name="ObjectList" Margin="0,0" ItemTapped="ObjectList_ItemTapped" RowHeight="50" SeparatorColor="Gray">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                        <Label Text="{Binding Name}" TextColor="Black" FontSize="20"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
