@@ -15,16 +15,50 @@ namespace PhotoXamarin
 {
     public partial class MainPage : ContentPage
     {
-        string impath;
+        public string impath;
         public MainPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
         }
+        async void TakePhotoAsync(object sender, EventArgs e)
+        {
+            try
+            {
+                var photo = await MediaPicker.CapturePhotoAsync(new MediaPickerOptions
+                {
+                    Title = $"xamarin.{DateTime.Now.ToString("dd.MM.yyyy_hh.mm.ss")}.png"
+                });
+                var newFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), photo.FileName);
+                using (var stream = await photo.OpenReadAsync())
+                using (var newStream = File.OpenWrite(newFile))
+                    await stream.CopyToAsync(newStream);
+
+                Debug.WriteLine($"Путь фото {photo.FullPath}");
+                impath = photo.FullPath;
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Сообщение об ошибке", ex.Message, "OK");
+            }
+        }
+
+        async void GetPhotoAsync(object sender, EventArgs e)
+        {
+            try
+            {
+                var photo = await MediaPicker.PickPhotoAsync();
+                impath = photo.FullPath;
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Сообщение об ошибке", ex.Message, "OK");
+            }
+        }
 
         private void ObjectList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            Navigation.PushAsync(new Objects((ProjectPhoto)e.Item));
+            Navigation.PushAsync(new ObjectsPage((ProjectPhoto)e.Item));
         }
 
         private void btnGallery_Clicked(object sender, EventArgs e)

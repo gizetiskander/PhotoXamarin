@@ -17,13 +17,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Objects.xaml.cs">
-      <DependentUpon>Objects.xaml</DependentUpon>
+    <Compile Update="ObjectsPage.xaml.cs">
+      <DependentUpon>ObjectsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Objects.xaml">
+    <EmbeddedResource Update="ObjectsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

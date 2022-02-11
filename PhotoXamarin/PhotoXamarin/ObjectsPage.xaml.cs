@@ -12,14 +12,13 @@ using Xamarin.Forms.Xaml;
 namespace PhotoXamarin
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Objects : ContentPage
+    public partial class ObjectsPage : ContentPage
     {
         readonly ProjectPhoto im;
-        public Objects()
+        public ObjectsPage(ProjectPhoto im)
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            this.im = im;
             name.Text = im.Name;
             image.Source = im.Image;
         }
