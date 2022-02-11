@@ -20,7 +20,7 @@ namespace PhotoXamarin
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             name.Text = im.Name;
-            image.Source = im.Image;
+            img.Source = im.Image;
         }
     }
 }

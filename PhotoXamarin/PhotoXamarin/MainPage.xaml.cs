@@ -88,7 +88,7 @@ namespace PhotoXamarin
         {
             try
             {
-                App.db.SaveItem(new ProjectPhoto(name.Text, impath));
+                App.db.SaveItem(new ProjectPhoto(Name.Text, impath));
                 DisplayAlert("", "Обьект успешно добавлен", "Ok");
                 UpdateList();
             }

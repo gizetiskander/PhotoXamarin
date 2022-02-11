@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PhotoXamarin.ObjectsPage">
+             x:Class="PhotoXamarin.ObjectsPage"
+             Visual="Material">
     <ContentPage.Content>
         <StackLayout>
             <Entry x:Name="name" BackgroundColor="Gray" Margin="40, 40, 40, 0" FontSize="15"/>
-            <Image x:Name="image" Margin="40"/>
+            <Image x:Name="img" Margin="40"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
