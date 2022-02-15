@@ -69,7 +69,7 @@ namespace PhotoXamarin
         {
             ObjectList.ItemsSource = null;
             /*Неизвестная ошибка*/
-            //ObjectList.ItemsSource = App.DB.GetProjectPhotos();
+            ObjectList.ItemsSource = App.DB.GetProjectPhotos();
         }
 
         private void btnAdd_Clicked(object sender, EventArgs e)
@@ -89,6 +89,20 @@ namespace PhotoXamarin
         private void ObjectList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             Navigation.PushAsync(new ObjectsPage((ProjectPhoto)e.Item));
+        }
+
+        private void btnSwipe_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                var id = ((SwipeItem)sender).CommandParameter.ToString();
+                App.Db.DeleteItem(int.Parse(id));
+                UpdateList();
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Не удалось удалить объект", ex.Message, "ok");
+            }
         }
     }
 }

@@ -31,5 +31,10 @@ namespace PhotoXamarin.db
             }
         }
 
+        public int DeleteItem(int id)
+        {
+            return DB.Delete<ProjectPhoto>(id);
+        }
+
     }
 }

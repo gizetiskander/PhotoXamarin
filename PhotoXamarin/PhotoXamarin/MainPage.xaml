@@ -23,9 +23,17 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <StackLayout>
-                                        <Label Text="{Binding Name}" TextColor="Black" FontSize="20"/>
-                                    </StackLayout>
+                                    <SwipeView>
+                                            <SwipeView.RightItems>
+                                                <SwipeItems>
+                                                <SwipeItem BackgroundColor="DarkRed" Clicked="btnSwipe_Clicked" CommandParameter="{Binding Id}" Text="Delete"/>
+                                            </SwipeItems>
+                                            </SwipeView.RightItems>
+                                            <StackLayout>
+                                                    <Label Text="{Binding Name}" TextColor="Black" FontSize="20"/>
+                                                    <Image Source="{Binding Image}" HeightRequest="100"/>
+                                            </StackLayout>
+                                    </SwipeView>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
