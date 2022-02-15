@@ -67,9 +67,13 @@ namespace PhotoXamarin
 
         public void UpdateList()
         {
+            ObjectList.RefreshCommand = new Command(() =>
+            {
+                ObjectList.IsRefreshing = false;
+            });
             ObjectList.ItemsSource = null;
             /*Неизвестная ошибка*/
-            ObjectList.ItemsSource = App.DB.GetProjectPhotos();
+            ObjectList.ItemsSource = App.Db.GetProjectPhotos();
         }
 
         private void btnAdd_Clicked(object sender, EventArgs e)

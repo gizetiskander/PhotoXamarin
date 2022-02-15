@@ -19,7 +19,7 @@
             </StackLayout>
             <StackLayout Margin="10, 30">
                 <ScrollView>
-                    <ListView x:Name="ObjectList" Margin="0,0" ItemTapped="ObjectList_ItemTapped" RowHeight="50" SeparatorColor="Gray">
+                    <ListView IsPullToRefreshEnabled="True" x:Name="ObjectList" Margin="0,0" ItemTapped="ObjectList_ItemTapped" RowHeight="50" SeparatorColor="Gray" HasUnevenRows="True">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
