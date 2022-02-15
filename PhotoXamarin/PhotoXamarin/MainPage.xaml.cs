@@ -72,7 +72,7 @@ namespace PhotoXamarin
                 ObjectList.IsRefreshing = false;
             });
             ObjectList.ItemsSource = null;
-            /*Неизвестная ошибка*/
+           
             ObjectList.ItemsSource = App.Db.GetProjectPhotos();
         }
 
